@@ -5,6 +5,7 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfi
 import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { User_Avatar } from "../utils/constant";
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
@@ -31,7 +32,8 @@ const Login = () => {
           const user = userCredential.user;
           console.log(user);
           updateProfile(user, {
-            displayName: name.current.value, photoURL: "https://media.licdn.com/dms/image/D5603AQGZqXkruAI2gg/profile-displayphoto-shrink_400_400/0/1710064036228?e=1717027200&v=beta&t=sGyzytPv29Qrpwx3lNIopRnEAcArexfyyqO1Ovh2Gak"
+            displayName: name.current.value,
+            photoURL: User_Avatar
           }).then(() => {
             // Profile updated!
             const { uid, email, displayName, photoURL } = auth.currentUser;
