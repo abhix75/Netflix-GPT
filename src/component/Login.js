@@ -46,7 +46,7 @@ const Login = () => {
                 photoURL: photoURL
               })
             )
-            navigate("/browser");
+
             // ...
           }).catch((error) => {
             // An error occurred
@@ -71,7 +71,7 @@ const Login = () => {
           // Signed in 
           const user = userCredential.user;
           console.log(user);
-          navigate("/browser");
+
           // ...
         })
         .catch((error) => {
